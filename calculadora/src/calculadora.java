@@ -195,7 +195,7 @@ public class calculadora  extends JFrame {
                         break;
                     case "/":
                         if (num2 == 0) {
-                            JOptionPane.showMessageDialog(this, "Cannot divide by zero!");
+                            JOptionPane.showMessageDialog(this, "Nao se divide por 0!");
                             return;
                         }
                         num1 /= num2;
