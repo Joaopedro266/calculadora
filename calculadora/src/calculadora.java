@@ -174,10 +174,10 @@ public class calculadora  extends JFrame {
 
     public void calcular(ActionEvent actionEvent) {
         String text = display.getText().replaceAll("\\s+", "");
-        String[] tokens = text.split("(?=[-+*/])|(?<=[-+*/])");
+        String[] tokens = text.split("(?=[-+x/])|(?<=[-+x/])");
         double num1 = Double.parseDouble(tokens[0]);
         double num2;
-        String operador = "+";
+        String operador = "+"; // Inicializar com uma operação fictícia
         for (int i = 1; i < tokens.length; i++) { 
             if (i % 2 == 1) {
                 operador = tokens[i];
@@ -190,12 +190,12 @@ public class calculadora  extends JFrame {
                     case "-":
                         num1 -= num2;
                         break;
-                    case "*":
+                    case "x":
                         num1 *= num2;
                         break;
                     case "/":
                         if (num2 == 0) {
-                            JOptionPane.showMessageDialog(this, "Nao se divide por 0!");
+                            JOptionPane.showMessageDialog(this, "Nao divide por 0!");
                             return;
                         }
                         num1 /= num2;
